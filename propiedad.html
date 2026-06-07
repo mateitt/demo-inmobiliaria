@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Asesoramientos Inmobiliarios — Concordia</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: '#0F3D3E',
+            accent: '#E07A28',
+            ink: '#1A1A1A',
+            mist: '#F5F3EF'
+          },
+          fontFamily: {
+            display: ['Anton', 'sans-serif'],
+            sans: ['Inter', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-white text-ink font-sans">
+
+  <!-- BANNER DEMO -->
+  <div class="bg-accent text-white text-center py-2 px-4 text-sm font-semibold tracking-wide">
+    VERSIÓN DEMO — Los datos de contacto y las imágenes son de prueba
+  </div>
+
+  <!-- HEADER -->
+  <header class="sticky top-0 z-40 bg-white border-b border-black/10">
+    <div class="max-w-[1200px] mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="font-display text-[20px] text-brand">ASESORAMIENTOS INMOBILIARIOS</a>
+
+      <nav class="hidden md:flex gap-6">
+        <a href="index.html" class="font-sans font-medium text-sm hover:text-accent">Inicio</a>
+        <a href="index.html#propiedades" class="font-sans font-medium text-sm hover:text-accent">Propiedades</a>
+        <a href="index.html#nosotros" class="font-sans font-medium text-sm hover:text-accent">Nosotros</a>
+        <a href="index.html#contacto" class="font-sans font-medium text-sm hover:text-accent">Contacto</a>
+      </nav>
+
+      <a href="index.html#contacto" class="bg-accent text-white px-4 py-2 rounded-lg font-semibold text-sm">Consultar</a>
+    </div>
+  </header>
+
+  <!-- DETALLE -->
+  <main id="detalle"></main>
+
+  <!-- FOOTER -->
+  <footer class="bg-brand text-white py-10 px-6 mt-16">
+    <div class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between gap-6">
+      <div>
+        <p class="font-display text-[22px]">ASESORAMIENTOS INMOBILIARIOS</p>
+        <p class="text-white/70 text-sm mt-2">25 de Mayo 847 — Concordia, Entre Ríos</p>
+        <p class="text-white/70 text-sm">Tel: +54 9 345 412-3456</p>
+        <a
+          href="https://wa.me/5493454123456"
+          target="_blank"
+          rel="noopener"
+          class="inline-flex items-center gap-2 bg-[#25D366] text-white rounded-lg px-4 py-2 font-semibold text-sm mt-4"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+            <path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.728-.979zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+          </svg>
+          WhatsApp
+        </a>
+      </div>
+
+      <nav class="flex flex-col gap-2">
+        <p class="font-display text-[18px] text-white/90">Enlaces</p>
+        <a href="index.html" class="text-white/70 text-sm hover:text-accent">Venta</a>
+        <a href="index.html" class="text-white/70 text-sm hover:text-accent">Alquiler</a>
+        <a href="index.html#contacto" class="text-white/70 text-sm hover:text-accent">Contacto</a>
+      </nav>
+    </div>
+
+    <div class="max-w-[1200px] mx-auto border-t border-white/10 mt-8 pt-6">
+      <p class="text-white/50 text-xs">© 2026 — Desarrollado por Mateo Pérez</p>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script>
+    function formatearPrecio(precio, moneda) {
+      const miles = precio.toLocaleString('es-AR');
+      return moneda === 'USD' ? `USD ${miles}` : `$ ${miles}`;
+    }
+
+    function capitalizar(texto) {
+      return texto.charAt(0).toUpperCase() + texto.slice(1);
+    }
+
+    const id = new URLSearchParams(location.search).get('id');
+    const prop = PROPIEDADES.find(p => p.id == id);
+    const detalle = document.getElementById('detalle');
+
+    if (!prop) {
+      detalle.innerHTML = `
+        <div class="max-w-[1100px] mx-auto px-6 py-24 text-center">
+          <h1 class="font-display text-[40px] text-brand">Propiedad no encontrada</h1>
+          <p class="text-ink/60 mt-3">La propiedad que buscás no existe o fue dada de baja.</p>
+          <a href="index.html" class="inline-block mt-6 bg-accent text-white px-6 py-3 rounded-lg font-semibold">Volver al inicio</a>
+        </div>
+      `;
+    } else {
+      const badgeColor = prop.operacion === 'venta' ? 'bg-accent' : 'bg-brand';
+
+      const miniaturas = prop.fotos.map((f, i) => `
+        <img
+          src="${f}"
+          alt="${prop.titulo} — foto ${i + 1}"
+          data-foto="${f}"
+          class="thumb h-20 w-28 flex-none object-cover rounded-lg cursor-pointer border-2 ${i === 0 ? 'border-accent' : 'border-transparent'}"
+        />
+      `).join('');
+
+      const comodidades = prop.comodidades.map(c => `
+        <span class="bg-mist rounded-lg px-3 py-2 text-sm">${c}</span>
+      `).join('');
+
+      const numero = "5493454123456";
+      const mensaje = encodeURIComponent(
+        "Hola! Me interesa la propiedad: " + prop.titulo + " (" + location.href + ")");
+      const whatsappLink = "https://wa.me/" + numero + "?text=" + mensaje;
+
+      detalle.innerHTML = `
+        <div class="max-w-[1100px] mx-auto px-6 py-8">
+          <img
+            id="foto-principal"
+            src="${prop.fotos[0]}"
+            alt="${prop.titulo}"
+            class="w-full rounded-xl aspect-[16/9] object-cover"
+          />
+          <div class="flex gap-2 overflow-x-auto mt-3">
+            ${miniaturas}
+          </div>
+
+          <div class="mt-8">
+            <div class="flex items-center gap-3">
+              <span class="${badgeColor} text-white text-xs px-3 py-1 rounded-full">${prop.operacion.toUpperCase()}</span>
+              <span class="text-ink/60 text-sm">${capitalizar(prop.tipo)}</span>
+            </div>
+            <h1 class="font-display text-[28px] md:text-[40px] leading-tight mt-2">${prop.titulo}</h1>
+            <p class="font-display text-accent text-[32px] mt-1">${formatearPrecio(prop.precio, prop.moneda)}</p>
+            <p class="text-ink/60 mt-1">${prop.direccion}</p>
+          </div>
+
+          <div class="border-y border-black/10 py-4 mt-6 flex flex-wrap gap-8">
+            <div>
+              <p class="text-xs uppercase text-ink/50">Superficie</p>
+              <p class="font-semibold text-lg">${prop.m2} m²</p>
+            </div>
+            <div>
+              <p class="text-xs uppercase text-ink/50">Ambientes</p>
+              <p class="font-semibold text-lg">${prop.ambientes}</p>
+            </div>
+            <div>
+              <p class="text-xs uppercase text-ink/50">Tipo</p>
+              <p class="font-semibold text-lg">${capitalizar(prop.tipo)}</p>
+            </div>
+            <div>
+              <p class="text-xs uppercase text-ink/50">Operación</p>
+              <p class="font-semibold text-lg">${capitalizar(prop.operacion)}</p>
+            </div>
+          </div>
+
+          <p class="font-sans leading-relaxed text-ink/80 mt-6">${prop.descripcion}</p>
+
+          <h2 class="font-display text-[24px] text-brand mt-8">Comodidades</h2>
+          <div class="flex flex-wrap gap-2 mt-3">
+            ${comodidades}
+          </div>
+
+          <h2 class="font-display text-[24px] text-brand mt-8">Ubicación</h2>
+          <iframe
+            src="https://maps.google.com/maps?q=${prop.lat},${prop.lng}&z=16&output=embed"
+            class="w-full h-[350px] rounded-xl border-0 mt-3"
+            loading="lazy"
+          ></iframe>
+
+          <a
+            href="${whatsappLink}"
+            target="_blank"
+            rel="noopener"
+            class="bg-[#25D366] text-white rounded-xl py-4 px-6 w-full font-semibold flex items-center justify-center gap-2 mt-6"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+              <path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.728-.979zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+            </svg>
+            Consultar por WhatsApp
+          </a>
+        </div>
+      `;
+
+      const fotoPrincipal = document.getElementById('foto-principal');
+      document.querySelectorAll('.thumb').forEach(thumb => {
+        thumb.addEventListener('click', () => {
+          fotoPrincipal.src = thumb.dataset.foto;
+          document.querySelectorAll('.thumb').forEach(t => {
+            t.classList.remove('border-accent');
+            t.classList.add('border-transparent');
+          });
+          thumb.classList.remove('border-transparent');
+          thumb.classList.add('border-accent');
+        });
+      });
+    }
+  </script>
+</body>
+</html>

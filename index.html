@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Asesoramientos Inmobiliarios — Concordia</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: '#0F3D3E',
+            accent: '#E07A28',
+            ink: '#1A1A1A',
+            mist: '#F5F3EF'
+          },
+          fontFamily: {
+            display: ['Anton', 'sans-serif'],
+            sans: ['Inter', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body class="bg-white text-ink font-sans">
+
+  <!-- BANNER DEMO -->
+  <div class="bg-accent text-white text-center py-2 px-4 text-sm font-semibold tracking-wide">
+    VERSIÓN DEMO — Los datos de contacto y las imágenes son de prueba
+  </div>
+
+  <!-- HEADER -->
+  <header class="sticky top-0 z-40 bg-white border-b border-black/10">
+    <div class="max-w-[1200px] mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#" class="font-display text-[20px] text-brand">ASESORAMIENTOS INMOBILIARIOS</a>
+
+      <nav class="hidden md:flex gap-6">
+        <a href="#inicio" data-nav class="font-sans font-medium text-sm hover:text-accent">Inicio</a>
+        <a href="#propiedades" data-nav class="font-sans font-medium text-sm hover:text-accent">Propiedades</a>
+        <a href="#nosotros" data-nav class="font-sans font-medium text-sm hover:text-accent">Nosotros</a>
+        <a href="#contacto" data-nav class="font-sans font-medium text-sm hover:text-accent">Contacto</a>
+      </nav>
+
+      <a href="#contacto" class="bg-accent text-white px-4 py-2 rounded-lg font-semibold text-sm">Consultar</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="inicio" class="bg-brand text-white py-16 md:py-24 px-6 scroll-mt-20">
+    <div class="max-w-[1200px] mx-auto">
+      <h1 class="font-display uppercase text-[36px] md:text-[56px] leading-tight">
+        ENCONTRÁ TU PRÓXIMO LUGAR
+      </h1>
+      <p class="font-sans text-white/80 max-w-[520px] mt-3">
+        Propiedades en venta y alquiler en Concordia y la región.
+      </p>
+
+      <div class="bg-white rounded-xl p-4 mt-8 max-w-[900px] flex flex-col md:flex-row gap-3">
+        <select id="f-operacion" class="text-ink border border-black/10 rounded-lg px-3 py-2 md:w-auto">
+          <option value="">Todas</option>
+          <option value="venta">Venta</option>
+          <option value="alquiler">Alquiler</option>
+        </select>
+
+        <select id="f-tipo" class="text-ink border border-black/10 rounded-lg px-3 py-2 md:w-auto">
+          <option value="">Todos</option>
+          <option value="casa">Casa</option>
+          <option value="departamento">Departamento</option>
+          <option value="comercio">Comercio</option>
+          <option value="terreno">Terreno</option>
+        </select>
+
+        <input
+          id="f-texto"
+          type="text"
+          placeholder="Buscar por dirección o título..."
+          class="text-ink border border-black/10 rounded-lg px-3 py-2 flex-1"
+        />
+
+        <button id="btnBuscar" class="bg-accent text-white rounded-lg px-6 py-2 font-semibold">Buscar</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULTADOS -->
+  <section id="propiedades" class="max-w-[1200px] mx-auto px-6 py-12 scroll-mt-20">
+    <p id="contador" class="font-sans text-ink/60"></p>
+    <div id="grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4"></div>
+  </section>
+
+  <!-- NOSOTROS -->
+  <section id="nosotros" class="bg-mist py-20 px-6 scroll-mt-20">
+    <div class="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div>
+        <p class="font-sans text-accent font-semibold text-[13px] uppercase tracking-widest">Quiénes somos</p>
+        <h2 class="font-display uppercase text-[32px] md:text-[48px] text-brand leading-tight mt-2">
+          UNA INMOBILIARIA QUE TE ACOMPAÑA
+        </h2>
+        <p class="text-ink/70 leading-relaxed mt-4">
+          Asesores inmobiliarios con experiencia en Concordia y la región de Entre Ríos.
+          Nos especializamos en venta y alquiler de propiedades residenciales, comerciales
+          y terrenos, con trato personalizado y transparencia en cada operación.
+        </p>
+        <p class="text-ink/70 leading-relaxed mt-3">
+          Cada cliente es diferente. Por eso escuchamos primero y asesoramos después.
+        </p>
+        <a href="#contacto" class="inline-block bg-accent text-white px-6 py-3 rounded-lg font-semibold mt-6">Hablemos</a>
+      </div>
+      <div class="flex flex-col gap-4">
+        <div class="bg-white rounded-xl p-6 border border-black/10">
+          <p class="font-display text-brand text-[40px] leading-none">10+</p>
+          <p class="font-sans text-ink/60 text-sm mt-1">años de experiencia</p>
+        </div>
+        <div class="bg-white rounded-xl p-6 border border-black/10">
+          <p class="font-display text-brand text-[40px] leading-none">+300</p>
+          <p class="font-sans text-ink/60 text-sm mt-1">propiedades gestionadas</p>
+        </div>
+        <div class="bg-white rounded-xl p-6 border border-black/10">
+          <p class="font-display text-brand text-[40px] leading-none">100%</p>
+          <p class="font-sans text-ink/60 text-sm mt-1">asesoramiento personalizado</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="bg-brand py-20 px-6 text-white scroll-mt-20">
+    <div class="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+      <div>
+        <p class="font-sans text-accent font-semibold text-[13px] uppercase tracking-widest">Contacto</p>
+        <h2 class="font-display uppercase text-[32px] md:text-[40px] mt-2">HABLEMOS DE TU PRÓXIMA PROPIEDAD</h2>
+        <p class="text-white/70 mt-4">
+          Completá el formulario o escribinos directamente por WhatsApp. Te respondemos a la brevedad.
+        </p>
+        <div class="flex flex-col gap-4 mt-8">
+          <div class="flex items-center gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 text-accent"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+            <span>25 de Mayo 847, Concordia, Entre Ríos</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 text-accent"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
+            <span>+54 9 345 412-3456</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 text-accent"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+            <span>inmobiliaria.concordia@gmail.com</span>
+          </div>
+        </div>
+        <a href="https://wa.me/5493454123456" target="_blank" rel="noopener"
+           class="inline-flex items-center gap-2 bg-[#25D366] text-white px-6 py-4 rounded-xl font-semibold mt-6 w-fit">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24z"/></svg>
+          Escribinos por WhatsApp
+        </a>
+      </div>
+
+      <!-- Formulario demo (no envía realmente) -->
+      <form id="form-contacto" class="bg-white/10 rounded-xl p-6 flex flex-col gap-4">
+        <div>
+          <label for="c-nombre" class="text-white/70 text-sm">Nombre</label>
+          <input id="c-nombre" name="nombre" type="text" required placeholder="Tu nombre"
+            class="bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder:text-white/40 w-full focus:outline-none focus:border-accent mt-1" />
+        </div>
+        <div>
+          <label for="c-telefono" class="text-white/70 text-sm">Teléfono</label>
+          <input id="c-telefono" name="telefono" type="tel" placeholder="Tu teléfono"
+            class="bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder:text-white/40 w-full focus:outline-none focus:border-accent mt-1" />
+        </div>
+        <div>
+          <label for="c-email" class="text-white/70 text-sm">Email</label>
+          <input id="c-email" name="email" type="email" required placeholder="tu@email.com"
+            class="bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder:text-white/40 w-full focus:outline-none focus:border-accent mt-1" />
+        </div>
+        <div>
+          <label for="c-mensaje" class="text-white/70 text-sm">Mensaje</label>
+          <textarea id="c-mensaje" name="mensaje" rows="4" placeholder="Contanos qué estás buscando"
+            class="bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder:text-white/40 w-full focus:outline-none focus:border-accent mt-1"></textarea>
+        </div>
+        <button type="submit" class="bg-accent text-white py-3 rounded-lg font-semibold w-full">Enviar consulta</button>
+        <p id="form-ok" class="hidden text-center text-[#86efac] font-semibold text-sm">
+          ✓ Mensaje enviado. (demo — no se envió realmente)
+        </p>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-brand text-white pt-16 pb-8 px-6">
+    <div class="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
+
+      <div>
+        <p class="font-display text-[24px] leading-tight">INMOBILIARIA</p>
+        <p class="font-sans text-white/60 text-xs tracking-widest uppercase mt-1">Asesoramientos Inmobiliarios</p>
+
+        <div class="flex flex-col gap-4 mt-8 text-sm">
+          <div class="flex items-start gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="w-5 h-5 text-accent flex-none mt-0.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+            <span class="text-white/80">25 de Mayo 847<br>Concordia, Entre Ríos</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="w-5 h-5 text-accent flex-none"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
+            <span class="text-white/80">+54 9 345 412-3456</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="w-5 h-5 text-accent flex-none"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+            <a href="mailto:inmobiliaria.concordia@gmail.com" class="text-accent hover:underline break-all">inmobiliaria.concordia@gmail.com</a>
+          </div>
+        </div>
+
+        <div class="border-t border-white/10 mt-6 pt-6 flex flex-col gap-4 text-sm">
+          <div class="flex items-start gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="w-5 h-5 text-accent flex-none mt-0.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <div>
+              <p class="font-semibold">Lunes a viernes</p>
+              <p class="text-white/60">8.30 a 12.30 y 17.00 a 20.30</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="w-5 h-5 text-accent flex-none mt-0.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <div>
+              <p class="font-semibold">Sábados</p>
+              <p class="text-white/60">8.30 a 12.30</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="font-display text-[20px]">Links útiles</h3>
+        <ul class="flex flex-col gap-3 mt-6 text-sm">
+          <li><a href="#propiedades" class="flex items-center gap-2 text-white/70 hover:text-accent transition"><span class="text-accent">›</span> Alquileres</a></li>
+          <li><a href="#propiedades" class="flex items-center gap-2 text-white/70 hover:text-accent transition"><span class="text-accent">›</span> Ventas</a></li>
+          <li><a href="#propiedades" class="flex items-center gap-2 text-white/70 hover:text-accent transition"><span class="text-accent">›</span> Terrenos</a></li>
+          <li><a href="#propiedades" class="flex items-center gap-2 text-white/70 hover:text-accent transition"><span class="text-accent">›</span> Comercios</a></li>
+          <li><a href="#nosotros" class="flex items-center gap-2 text-white/70 hover:text-accent transition"><span class="text-accent">›</span> Nosotros</a></li>
+          <li><a href="#contacto" class="flex items-center gap-2 text-white/70 hover:text-accent transition"><span class="text-accent">›</span> Contacto</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-display text-[20px]">Inmobiliaria en Concordia</h3>
+        <p class="text-white/60 text-sm leading-relaxed mt-6">
+          Asesoramiento inmobiliario en Concordia, Entre Ríos. Ofrecemos opciones en
+          casas, departamentos, terrenos y locales comerciales, tanto en venta como en
+          alquiler. Para encontrar la propiedad que buscás, o una inversión con buena
+          rentabilidad, somos tu socio ideal. Nuestro asesoramiento, atención personalizada
+          y trato directo son el diferencial que nos distingue en la zona.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="max-w-[1200px] mx-auto border-t border-white/10 mt-12 pt-6 flex flex-col md:flex-row justify-between gap-3 text-xs text-white/50">
+      <p>© 2026 Asesoramientos Inmobiliarios — Concordia, Entre Ríos</p>
+      <p>Desarrollado por Mateo Pérez</p>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script>
+    function formatearPrecio(precio, moneda) {
+      const miles = precio.toLocaleString('es-AR');
+      return moneda === 'USD' ? `USD ${miles}` : `$ ${miles}`;
+    }
+
+    function capitalizar(texto) {
+      return texto.charAt(0).toUpperCase() + texto.slice(1);
+    }
+
+    function renderPropiedades(lista) {
+      const grid = document.getElementById('grid');
+      grid.innerHTML = '';
+
+      lista.forEach(p => {
+        const badgeColor = p.operacion === 'venta' ? 'bg-accent' : 'bg-brand';
+        const specs = [`${p.m2} m²`];
+        if (p.tipo !== 'terreno') specs.push(`${p.ambientes} amb`);
+        specs.push(capitalizar(p.tipo));
+
+        const card = document.createElement('a');
+        card.href = `propiedad.html?id=${p.id}`;
+        card.className = 'block bg-white rounded-xl overflow-hidden border border-black/10 hover:shadow-lg transition';
+        card.innerHTML = `
+          <div class="relative">
+            <img src="${p.fotos[0]}" alt="${p.titulo}" class="aspect-[4/3] w-full object-cover" />
+            <span class="${badgeColor} text-white text-xs px-3 py-1 rounded-full absolute top-3 left-3">${p.operacion.toUpperCase()}</span>
+          </div>
+          <div class="p-4">
+            <p class="font-display text-[24px] text-brand">${formatearPrecio(p.precio, p.moneda)}</p>
+            <h3 class="font-sans font-semibold text-base mt-1">${p.titulo}</h3>
+            <p class="font-sans text-sm text-ink/60">${p.direccion}</p>
+            <div class="mt-3 flex gap-4 text-sm text-ink/70">
+              ${specs.map(s => `<span>${s}</span>`).join('')}
+            </div>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+
+      document.getElementById('contador').textContent = `${lista.length} propiedades disponibles`;
+    }
+
+    function filtrar() {
+      const operacion = document.getElementById('f-operacion').value;
+      const tipo = document.getElementById('f-tipo').value;
+      const texto = document.getElementById('f-texto').value.trim().toLowerCase();
+
+      let resultado = PROPIEDADES;
+
+      if (operacion) resultado = resultado.filter(p => p.operacion === operacion);
+      if (tipo) resultado = resultado.filter(p => p.tipo === tipo);
+      if (texto) resultado = resultado.filter(p =>
+        p.titulo.toLowerCase().includes(texto) ||
+        p.direccion.toLowerCase().includes(texto)
+      );
+
+      if (resultado.length === 0) {
+        document.getElementById('grid').innerHTML =
+          '<p class="col-span-full text-center text-ink/50">No encontramos propiedades con esos filtros.</p>';
+        document.getElementById('contador').textContent = '0 propiedades disponibles';
+        return;
+      }
+
+      renderPropiedades(resultado);
+    }
+
+    document.getElementById('btnBuscar').onclick = filtrar;
+    document.getElementById('f-operacion').onchange = filtrar;
+    document.getElementById('f-tipo').onchange = filtrar;
+    document.getElementById('f-texto').addEventListener('input', filtrar);
+
+    renderPropiedades(PROPIEDADES);
+
+    // Formulario demo: muestra mensaje de éxito en lugar de enviar
+    document.getElementById('form-contacto').addEventListener('submit', function(e) {
+      e.preventDefault();
+      this.querySelector('button[type=submit]').disabled = true;
+      document.getElementById('form-ok').classList.remove('hidden');
+    });
+
+    // Resaltado de sección activa en el nav
+    const navLinks = Array.from(document.querySelectorAll('header [data-nav]'));
+    const porId = {};
+    navLinks.forEach(a => { porId[a.getAttribute('href').slice(1)] = a; });
+    const secciones = ['inicio','propiedades','nosotros','contacto']
+      .map(id => document.getElementById(id)).filter(Boolean);
+
+    let activo = null;
+    const marcar = id => {
+      if (id === activo) return;
+      activo = id;
+      navLinks.forEach(a => a.classList.remove('text-accent','font-bold'));
+      navLinks.forEach(a => a.classList.add('text-ink','font-medium'));
+      if (porId[id]) {
+        porId[id].classList.remove('text-ink','font-medium');
+        porId[id].classList.add('text-accent','font-bold');
+      }
+    };
+
+    const obs = new IntersectionObserver(entradas => {
+      const visibles = entradas.filter(e => e.isIntersecting)
+        .sort((a,b) => b.intersectionRatio - a.intersectionRatio);
+      if (visibles.length) marcar(visibles[0].target.id);
+    }, { rootMargin: '-80px 0px -55% 0px', threshold: [0.1,0.25,0.5] });
+
+    secciones.forEach(s => obs.observe(s));
+  </script>
+</body>
+</html>
